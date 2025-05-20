@@ -1,6 +1,6 @@
 const express = require("express");
 const { createServer } = require("http");
-const { connectToMongodb } = require("./database");
+const { connectToMongoDb } = require("./database");
 const cors = require("cors");
 
 const app = express();
@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-connectToMongodb().then(() => {
+connectToMongoDb().then(() => {
   server.listen(PORT, () => {
     console.log(`here is the port ${PORT}`);
   });
